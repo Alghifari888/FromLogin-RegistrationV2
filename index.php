@@ -11,30 +11,38 @@ $loginError = '';
 // Mengecek apakah request berasal dari form (POST)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    // Mengambil nilai email dari input user
+    // Mengambil nilai email dan password dari input user
     $email = $_POST['email'];
-    // Mengambil nilai password dari input user
     $password = $_POST['password'];
 
-    // Mempersiapkan statement SQL untuk mencari user berdasarkan email
-    $stmt = $pdo->prepare("SELECT id, password FROM users WHERE email = ?");
-    $stmt->execute([$email]); // Menjalankan query dengan email sebagai parameter
-    $user = $stmt->fetch(); // Mengambil hasil query (jika ada)
+    // Ambil data user + role
+    $stmt = $pdo->prepare("SELECT id, password, role FROM users WHERE email = ?");
+    $stmt->execute([$email]);
+    $user = $stmt->fetch();
 
-    // Jika user ditemukan dan password cocok
     if ($user && password_verify($password, $user['password'])) {
-        // Simpan ID user ke session untuk login
+        // Simpan ke session
         $_SESSION['user_id'] = $user['id'];
+        $_SESSION['role'] = $user['role'];
 
-        // Redirect ke dashboard
-        header("Location: public/dashboard.php");
+        // Redirect berdasarkan role
+        switch ($user['role']) {
+            case 'admin':
+                header("Location: public/admin.php");
+                break;
+            case 'member':
+                header("Location: public/member.php");
+                break;
+            default:
+                header("Location: public/user.php");
+        }
         exit;
     } else {
-        // Jika gagal login, tampilkan pesan error
         $loginError = 'Email atau password salah!';
     }
 }
 ?>
+
 
 <!-- Mulai tampilan HTML -->
 <!DOCTYPE html>
