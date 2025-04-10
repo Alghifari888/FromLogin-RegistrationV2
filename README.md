@@ -1,6 +1,10 @@
 
 # 🔐 FromLogin-Registration V2 – Multi-Role Login System (PHP Native)
 
+## ✨ Kutipan
+
+> *"Aku tidak berilmu; yang berilmu hanyalah DIA. Jika tampak ilmu dariku, itu hanyalah pantulan dari Cahaya-Nya."*  
+
 ## 🚀 Perbedaan V1 vs V2
 
 | Fitur                         | Versi 1 (V1)                               | Versi 2 (V2)                                              |
@@ -155,6 +159,8 @@ MIT License. Bebas digunakan untuk belajar, proyek pribadi, atau dikembangkan.
 
 ---
 
-**Semoga bermanfaat! Jangan lupa ⭐ repo ini kalau membantu 🙌**
+**Selamat belajar dan semoga bermanfaat!**  
+✨ Kalau project ini membantu, boleh kasih ⭐ di GitHub ya!
+
 ```
 
