@@ -30,13 +30,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Redirect berdasarkan role
         switch ($user['role']) {
             case 'admin':
-                header("Location: public/admin.php");
+                header("Location: public/admin/adminDasboard.php");
                 break;
             case 'member':
-                header("Location: public/member.php");
+                header("Location: public/member/member.php");
                 break;
             default:
-                header("Location: public/user.php");
+                header("Location: public/user/user.php");
         }
         exit;
     } else {

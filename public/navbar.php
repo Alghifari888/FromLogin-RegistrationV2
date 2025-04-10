@@ -3,6 +3,12 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+
+// Include config buat dapet BASE_URL
+// Pastikan session aktif dan fungsi tersedia
+require_once __DIR__ . '/../includes/session.php';
+require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../config/config.php';
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
@@ -17,16 +23,17 @@ if (session_status() === PHP_SESSION_NONE) {
 
         <?php if (isset($_SESSION['role'])): ?>
           <?php if ($_SESSION['role'] === 'admin'): ?>
-            <li class="nav-item"><a class="nav-link" href="admin.php">Admin Panel</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>admin/kelolauser.php">Kelola User</a></li>
           <?php elseif ($_SESSION['role'] === 'member'): ?>
-            <li class="nav-item"><a class="nav-link" href="member.php">Member Area</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>member/member.php">Member Area</a></li>
           <?php elseif ($_SESSION['role'] === 'user'): ?>
-            <li class="nav-item"><a class="nav-link" href="user.php">User Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>user/user.php">User Area</a></li>
           <?php endif; ?>
 
-          <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+          <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>logout.php">Logout</a></li>
+
         <?php else: ?>
-          <li class="nav-item"><a class="nav-link" href="../index.php">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>../index.php">Login</a></li>
         <?php endif; ?>
 
       </ul>
