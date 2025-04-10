@@ -1,4 +1,5 @@
 <?php
+require '../includes/session.php'; // Untuk session_start() dan timeout
 require '../config/database.php';
 
 $registerError = '';
@@ -12,21 +13,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (strlen($password) < 8) {
         $registerError = 'Password minimal 8 karakter.';
     } else {
+        // Cek apakah email sudah terdaftar
         $stmt = $pdo->prepare("SELECT id FROM users WHERE email = ?");
         $stmt->execute([$email]);
+
         if ($stmt->fetch()) {
             $registerError = 'Email sudah terdaftar.';
         } else {
+            // Simpan user baru
             $hashed = password_hash($password, PASSWORD_BCRYPT);
             $stmt = $pdo->prepare("INSERT INTO users (email, password, role) VALUES (?, ?, ?)");
             $stmt->execute([$email, $hashed, 'user']);
 
-            header("Location: ../index.php");
+            // Ambil ID terakhir yang dimasukkan
+            $userId = $pdo->lastInsertId();
+
+            // Simpan ke session untuk auto-login
+            $_SESSION['user_id'] = $userId;
+            $_SESSION['role'] = 'user';
+
+            // Redirect ke dashboard user
+            header("Location: public/user.php");
             exit;
         }
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="id">
