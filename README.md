@@ -11,7 +11,7 @@
 |-------------------------------|-------------------------------------------|----------------------------------------------------------------|
 | **Login & Register**          | ✔️ Basic                                   | ✔️ Multi-role login (admin, member, user)                      |
 | **Role-based redirect**       | ❌ Tidak ada                               | ✔️ Otomatis redirect sesuai peran                              |
-| **Halaman khusus per role**   | ❌ Tidak tersedia                          | ✔️ `adminDashboard.php`, `member.php`, `user.php`              |
+| **Halaman khusus per role**   | ❌ Tidak tersedia                          | ✔️ `adminDashboard.php, kelolauser.php`, `member.php`, `user.php`              |
 | **Kelola user (CRUD)**        | ❌ Tidak ada                               | ✔️ Tambah, edit, hapus, filter user (khusus admin)             |
 | **Form filter & tambah user** | ❌ Tidak ada                               | ✔️ Desain modern, responsif, form lebih ramping & clean        |
 | **Struktur direktori**        | ✔️ Dasar                                   | ✔️ Modular, folder `public/`, `includes/`, `config/` terpisah  |
