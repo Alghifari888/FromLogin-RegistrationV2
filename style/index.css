@@ -1,0 +1,44 @@
+/* Gaya dasar untuk body */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Card login */
+  .card {
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  
+  .card-body {
+    padding: 2rem;
+  }
+  
+  /* Gambar samping */
+  .login-image {
+    background-image: url('../img/index.png'); /* Ganti dengan gambar kamu */
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+  
+  /* Responsive image section */
+  @media (max-width: 767px) {
+    .login-image {
+      display: none;
+    }
+  }
+  
+  /* Tombol login */
+  .btn-success {
+    background-color: #198754;
+    border: none;
+    transition: 0.3s;
+  }
+  
+  .btn-success:hover {
+    background-color: #146c43;
+  }
+  

@@ -48,14 +48,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Register</title>
   <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../style/register.css" rel="stylesheet">
 </head>
 <body class="bg-light d-flex align-items-center" style="min-height: 100vh;">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-5">
-        <div class="card shadow">
-          <div class="card-body">
-            <h4 class="card-title text-center mb-4">Register</h4>
+      <div class="col-md-8 col-lg-6">
+        <div class="card shadow d-flex flex-row">
+
+          <!-- Gambar di sisi kiri -->
+          <div class="col-md-6 register-image d-none d-md-block"></div>
+
+          <!-- Form register di sisi kanan -->
+          <div class="col-md-6 p-4">
+            <h4 class="text-center mb-4">Register</h4>
 
             <?php if ($registerError): ?>
               <div class="alert alert-danger"><?= htmlspecialchars($registerError) ?></div>
@@ -81,6 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
     </div>
   </div>
+
   <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
