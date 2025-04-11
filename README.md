@@ -17,7 +17,7 @@
 | Fungsi reusable (`functions`) | ❌ Belum ada                                | ✔️ Fungsi cek login, role, dll                            |
 | `config.php` dengan `BASE_URL`| ❌ Tidak ada                                | ✔️ Memudahkan saat pindah ke hosting                      |
 | Bootstrap                    | ✔️ Clean                                    | ✔️ Tetap responsive, tampil modern                        |
-| `.env` support               | ✔️ Opsional                                 | ❌ Belum aktif, bisa ditambah jika dibutuhkan             |
+| `.env` support               | ✔️ Opsional                                 | ✔️ Opsional             |
 
 ---
 
