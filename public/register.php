@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['role'] = 'user';
 
             // Redirect ke dashboard user
-            header("Location: public/user/user.php");
+            header("Location:user/user.php");
             exit;
         }
     }
