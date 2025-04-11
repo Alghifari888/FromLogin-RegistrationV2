@@ -42,6 +42,7 @@
   - Menambah user baru
   - Edit email, password, role
   - Menghapus user
+  - Pencarian filter user
 - ✅ Proteksi halaman berdasarkan role
 - ✅ Struktur proyek profesional
 - ✅ Clean UI dengan Bootstrap 5
@@ -80,7 +81,16 @@ FROMLOGINV2/
 ├── includes/
 │   ├── functions.php        ← Fungsi: isLoggedIn(), isAdmin(), dll
 │   └── session.php          ← Pengaturan session
-│
+├── style
+|   ├── navbar.css
+|   ├── index.css
+|   ├── register.css
+|   ├── kelolauser.css
+|
+├── img
+|   ├── index.png
+|   ├── register.png
+|
 ├── public/
 │   ├── admin/
 │   │   ├── adminDashboard.php
