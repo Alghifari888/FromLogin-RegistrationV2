@@ -6,7 +6,7 @@
 > *"Aku tidak berilmu; yang berilmu hanyalah DIA. Jika tampak ilmu dariku, itu hanyalah pantulan dari Cahaya-Nya."*
 
 ## 🎥 Demo
-![Demo](./demo.gif)
+![Demo](./videoujicoba-1.gif)
 
 
 ## 🚀 Perbedaan V1 vs V2
