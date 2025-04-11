@@ -15,7 +15,6 @@ if (!isLoggedIn() || !isAdmin()) {
   <title>Admin</title>
   <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../../style/navbar.css" rel="stylesheet">
-
 </head>
 <body>
 
