@@ -3,7 +3,7 @@
 // Ganti sesuai kebutuhan (misal saat upload ke hosting)
 
 // Jika di localhost (folder utama kamu misalnya FROMLOGINV2)
-define('BASE_URL', '/FROMLOGINV2/public/');
+define('BASE_URL', '/FromLogin-RegistrationV2/public/');
 
 // Kalau nanti sudah di-upload ke hosting/domain:
 // define('BASE_URL', 'https://namadomainkamu.com/');
