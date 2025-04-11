@@ -7,17 +7,22 @@
 
 ## 🚀 Perbedaan V1 vs V2
 
-| Fitur                         | Versi 1 (V1)                               | Versi 2 (V2)                                              |
-|------------------------------|--------------------------------------------|-----------------------------------------------------------|
-| Login & Register             | ✔️ Basic                                   | ✔️ Plus multi-role login                                  |
-| Role-based redirect          | ❌ Tidak ada                                | ✔️ Admin, Member, User                                    |
-| Halaman khusus per role      | ❌ Tidak                                    | ✔️ `admin.php & kelolauser.php`, `member.php`, `user.php` |
-| Kelola user (CRUD)           | ❌ Tidak ada                                | ✔️ Bisa tambah, edit, hapus user (khusus admin)           |
-| Struktur direktori           | ✔️ Rapi                                     | ✔️ Lebih modular + pemisahan `public/`                    |
-| Fungsi reusable (`functions`) | ❌ Belum ada                                | ✔️ Fungsi cek login, role, dll                            |
-| `config.php` dengan `BASE_URL`| ❌ Tidak ada                                | ✔️ Memudahkan saat pindah ke hosting                      |
-| Bootstrap                    | ✔️ Clean                                    | ✔️ Tetap responsive, tampil modern                        |
-| `.env` support               | ✔️ Opsional                                 | ✔️ Opsional             |
+| Fitur                          | Versi 1 (V1)                              | Versi 2 (V2)                                                   |
+|-------------------------------|-------------------------------------------|----------------------------------------------------------------|
+| **Login & Register**          | ✔️ Basic                                   | ✔️ Multi-role login (admin, member, user)                      |
+| **Role-based redirect**       | ❌ Tidak ada                               | ✔️ Otomatis redirect sesuai peran                              |
+| **Halaman khusus per role**   | ❌ Tidak tersedia                          | ✔️ `adminDashboard.php, kelolauser.php`, `member.php`, `user.php`              |
+| **Kelola user (CRUD)**        | ❌ Tidak ada                               | ✔️ Tambah, edit, hapus, filter user (khusus admin)             |
+| **Form filter & tambah user** | ❌ Tidak ada                               | ✔️ Desain modern, responsif, form lebih ramping & clean        |
+| **Struktur direktori**        | ✔️ Dasar                                   | ✔️ Modular, folder `public/`, `includes/`, `config/` terpisah  |
+| **Fungsi reusable (`functions`)** | ❌ Belum ada                           | ✔️ Cek login, peran, redirect otomatis                         |
+| **`config.php` & `BASE_URL`** | ❌ Tidak ada                               | ✔️ Memudahkan saat deploy ke hosting                           |
+| **Bootstrap**                 | ✔️ Basic                                   | ✔️ Versi terbaru, clean & responsif                           |
+| **`.env` support**            | ✔️ Opsional                                | ✔️ Tetap opsional, bisa ditambahkan untuk koneksi DB, dll      |
+| **Tampilan**                  | ❌ Flat & minim                            | ✔️ Lebih modern, user-friendly & rapih                         |
+
+---
+
 
 ---
 
@@ -37,6 +42,7 @@
   - Menambah user baru
   - Edit email, password, role
   - Menghapus user
+  - Pencarian filter user
 - ✅ Proteksi halaman berdasarkan role
 - ✅ Struktur proyek profesional
 - ✅ Clean UI dengan Bootstrap 5
@@ -75,7 +81,16 @@ FROMLOGINV2/
 ├── includes/
 │   ├── functions.php        ← Fungsi: isLoggedIn(), isAdmin(), dll
 │   └── session.php          ← Pengaturan session
-│
+├── style
+|   ├── navbar.css
+|   ├── index.css
+|   ├── register.css
+|   ├── kelolauser.css
+|
+├── img
+|   ├── index.png
+|   ├── register.png
+|
 ├── public/
 │   ├── admin/
 │   │   ├── adminDashboard.php
