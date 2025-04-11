@@ -115,8 +115,14 @@ FROMLOGINV2/
 ## 🛠️ Instalasi
 
 1. **Clone repo ini** atau [Download ZIP](https://github.com/Alghifari888/FromLogin-RegistrationV2/archive/refs/heads/main.zip)
+2. Contoh (jika folder kamu bernama FromLogin-RegistrationV2):
 
-2. **Import database**
+php
+Salin
+Edit
+define('BASE_URL', '/FromLogin-RegistrationV2/public/');
+
+3. **Import database**
    - Buat database, misalnya: `login_v2`
    - Jalankan SQL berikut di phpMyAdmin atau terminal:
 
@@ -130,7 +136,7 @@ FROMLOGINV2/
      );
      ```
 
-3. **Atur koneksi database**
+4. **Atur koneksi database**
    - Buka `config/config.php`
    - Ubah sesuai konfigurasi lokalmu:
 
@@ -142,7 +148,7 @@ FROMLOGINV2/
      define('BASE_URL', '/FROMLOGINV2/public/');
      ```
 
-4. **Jalankan di server lokal**
+5. **Jalankan di server lokal**
    - Simpan folder di `htdocs` (jika pakai XAMPP)
    - Akses: [http://localhost/FROMLOGINV2/public](http://localhost/FROMLOGINV2/public)
 
