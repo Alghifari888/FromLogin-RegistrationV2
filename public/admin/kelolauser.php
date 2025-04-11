@@ -83,6 +83,30 @@ if (isset($_GET['hapus'])) {
 // Ambil semua data user
 $stmt = $pdo->query("SELECT * FROM users ORDER BY id ASC");
 $users = $stmt->fetchAll();
+
+// Filter
+$filterEmail = $_GET['filter_email'] ?? '';
+$filterRole = $_GET['filter_role'] ?? '';
+
+// Ambil user dengan filter
+$query = "SELECT * FROM users WHERE 1";
+$params = [];
+
+if (!empty($filterEmail)) {
+    $query .= " AND email LIKE ?";
+    $params[] = "%$filterEmail%";
+}
+
+if (!empty($filterRole)) {
+    $query .= " AND role = ?";
+    $params[] = $filterRole;
+}
+
+$query .= " ORDER BY id ASC";
+$stmt = $pdo->prepare($query);
+$stmt->execute($params);
+$users = $stmt->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -91,6 +115,9 @@ $users = $stmt->fetchAll();
     <meta charset="UTF-8">
     <title>Admin Panel</title>
     <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../style/navbar.css" rel="stylesheet">
+    <link href="../../style/kelolauser.css" rel="stylesheet">
+
 </head>
 <body>
 <?php include '../navbar.php'; ?>
@@ -112,20 +139,54 @@ $users = $stmt->fetchAll();
         </div>
     <?php endif; ?>
 
-    <!-- Form Tambah -->
-    <form method="POST" class="row g-2 mb-4">
+<!-- Form Tambah -->
+<div class="card border-0 shadow-sm p-3 mb-4">
+    <h6 class="text-center mb-3 fw-semibold">Tambah Pengguna Baru</h6>
+    <form method="POST" class="row g-2 align-items-center">
         <input type="hidden" name="action" value="tambah">
-        <div class="col-md-3"><input name="email" class="form-control" placeholder="Email" required></div>
-        <div class="col-md-2"><input name="password" class="form-control" placeholder="Password" required></div>
-        <div class="col-md-2">
-            <select name="role" class="form-select" required>
+        <div class="col-lg-4 col-md-6">
+            <input name="email" class="form-control form-control-sm" placeholder="Email" required>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <input name="password" class="form-control form-control-sm" placeholder="Password" required>
+        </div>
+        <div class="col-lg-2 col-md-4">
+            <select name="role" class="form-select form-select-sm" required>
                 <option value="user">user</option>
                 <option value="member">member</option>
                 <option value="admin">admin</option>
             </select>
         </div>
-        <div class="col-md-2"><button class="btn btn-success">Tambah</button></div>
+        <div class="col-lg-3 col-md-4 d-grid">
+            <button class="btn btn-success btn-sm">Tambah</button>
+        </div>
     </form>
+</div>
+
+<!-- Form Filter -->
+<div class="card border-0 shadow-sm p-3 mb-4">
+    <form method="GET" class="row g-2 align-items-center">
+        <div class="col-lg-5 col-md-6">
+            <input type="text" name="filter_email" class="form-control form-control-sm" placeholder="Cari berdasarkan email"
+                   value="<?= htmlspecialchars($filterEmail) ?>">
+        </div>
+        <div class="col-lg-3 col-md-4">
+            <select name="filter_role" class="form-select form-select-sm">
+                <option value="">Semua Role</option>
+                <option value="user" <?= $filterRole === 'user' ? 'selected' : '' ?>>user</option>
+                <option value="member" <?= $filterRole === 'member' ? 'selected' : '' ?>>member</option>
+                <option value="admin" <?= $filterRole === 'admin' ? 'selected' : '' ?>>admin</option>
+            </select>
+        </div>
+        <div class="col-lg-2 col-md-3 d-grid">
+            <button class="btn btn-primary btn-sm">Filter</button>
+        </div>
+        <div class="col-lg-2 col-md-3 d-grid">
+            <a href="kelolauser.php" class="btn btn-secondary btn-sm">Reset</a>
+        </div>
+    </form>
+</div>
+
 
     <!-- Tabel User -->
     <table class="table table-bordered table-hover">

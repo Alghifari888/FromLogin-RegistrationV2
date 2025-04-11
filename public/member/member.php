@@ -14,6 +14,7 @@ if (!isLoggedIn() || !isMember()) {
   <meta charset="UTF-8">
   <title>Member</title>
   <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../style/navbar.css" rel="stylesheet">
 </head>
 <body>
 
