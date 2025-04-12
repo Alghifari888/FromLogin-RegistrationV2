@@ -16,12 +16,17 @@ if (!isLoggedIn() || !isMember()) {
   <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../../style/navbar.css" rel="stylesheet">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
+    <?php include '../navbar.php'; ?>
 
-<?php include '../navbar.php'; ?>
+    <div class="container my-4">
+        <!-- Konten utama Member-->
+        <h1 class="text-center">Member</h1>
+    </div>
 
-<!-- Konten User -->
-<h1 class="text-center">Member</h1>
+    <?php include '../footer.php'; ?>
+
+
 
 <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>

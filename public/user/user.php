@@ -16,12 +16,15 @@ if (!isLoggedIn() || !isUser()) {
   <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../../style/navbar.css" rel="stylesheet">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
+   <?php include '../navbar.php'; ?>
 
-<?php include '../navbar.php'; ?>
 
-<!-- Konten User -->
-<h1 class="text-center">User</h1>
+   <div class="container my-4">
+        <!-- Konten utama User -->
+        <h1 class="text-center">User</h1>
+    </div>
+    <?php include '../footer.php'; ?>
 
 <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>

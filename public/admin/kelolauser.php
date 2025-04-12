@@ -119,10 +119,10 @@ $users = $stmt->fetchAll();
     <link href="../../style/kelolauser.css" rel="stylesheet">
 
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 <?php include '../navbar.php'; ?>
 
-
+<div class="container my-4">
 <div class="container mt-5">
     <h2 class="text-center mb-4">Admin Panel - Kelola Pengguna</h2>
 
@@ -229,6 +229,9 @@ $users = $stmt->fetchAll();
         </tbody>
     </table>
 </div>
+</div>
+<?php include '../footer.php'; ?>
+
 
 <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>

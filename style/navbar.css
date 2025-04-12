@@ -4,14 +4,17 @@
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   border-radius: 0 0 12px 12px;
+  z-index: 1030; /* pastikan di atas elemen lain */
 }
 
+/* Logo */
 .navbar-brand {
   font-size: 1.4rem;
   color: #fff;
   letter-spacing: 1px;
 }
 
+/* Link navbar */
 .navbar-nav .nav-link {
   color: #ddd;
   padding: 0.5rem 1rem;
@@ -19,25 +22,35 @@
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+/* Hover dan link aktif */
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
   background-color: #495057;
   color: #fff;
 }
 
+/* Link logout beda warna */
 .logout-link {
   color: #ff6b6b !important;
   font-weight: 500;
 }
 
+/* Hover logout */
 .logout-link:hover {
   background-color: #fa5252 !important;
   color: white !important;
 }
 
+/* Responsif versi mobile */
 @media (max-width: 991px) {
   .navbar-nav .nav-link {
     text-align: center;
     margin-bottom: 8px;
+  }
+
+  .navbar-collapse {
+    background-color: #212529;
+    padding: 1rem;
+    border-radius: 0 0 12px 12px;
   }
 }

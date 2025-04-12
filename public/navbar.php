@@ -5,13 +5,13 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 // Include config buat dapet BASE_URL
-// Pastikan session aktif dan fungsi tersedia
 require_once __DIR__ . '/../includes/session.php';
 require_once __DIR__ . '/../includes/functions.php';
 require_once __DIR__ . '/../config/config.php';
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm custom-navbar mb-4">
+<!-- Navbar Sticky (tetap di atas saat scroll) -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top custom-navbar mb-4">
   <div class="container">
     <a class="navbar-brand fw-bold text-uppercase" href="#">alghifari888</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
